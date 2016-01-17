@@ -1,0 +1,281 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:controls="using:Template10.Controls"                    
+                    xmlns:converters="using:ActivityTrackerUWP.Converters">
+
+    <x:Double x:Key="NarrowMinWidth">0</x:Double>
+    <x:Double x:Key="NormalMinWidth">521</x:Double>
+    <x:Double x:Key="MediumMinWidth">800</x:Double>
+    <x:Double x:Key="WideMinWidth">1200</x:Double>
+    
+    <Color x:Key="CustomColor">SteelBlue</Color>
+    <SolidColorBrush x:Key="CustomColorBrush" Color="{StaticResource CustomColor}" />
+
+    <Color x:Key="ContrastColor">White</Color>    
+    <SolidColorBrush x:Key="ContrastColorBrush" Color="{StaticResource ContrastColor}" />
+
+    <!-- Activity Tracker specific Styles -->
+    <SolidColorBrush x:Key="LIGHT_BLUE" Color="#FF02A2D8" />
+    <SolidColorBrush x:Key="LIGHT_GREY" Color="#FFF5F5F5" />
+    <SolidColorBrush x:Key="DARK_PURPLE" Color="#FF6B00D8" />
+    <SolidColorBrush x:Key="MEDIUM_GREY" Color="#FF999999" />
+    
+    <converters:ObjectToVisibilityConverter x:Name="ObjectToVisibilityConverter" />
+    <converters:ObjectToBoolConverter x:Name="ObjectToBoolConverter" />
+
+    <Color x:Key="APP_COLOR">#FF253D5D</Color>
+    <SolidColorBrush x:Key="SplashColorBrush" Color="{StaticResource APP_COLOR}" />
+    <!-- Activity Tracker specific Styles -->
+    
+    <ResourceDictionary.ThemeDictionaries>       
+        <!--  RequestedTheme=Dark  -->
+        <ResourceDictionary x:Key="Default">
+            <SolidColorBrush x:Key="ExtendedSplashBackground" Color="{StaticResource ContrastColor}" />
+            <SolidColorBrush x:Key="ExtendedSplashForeground" Color="{StaticResource CustomColor}" />
+
+            <SolidColorBrush x:Key="ModalBackground" Opacity=".5" Color="{StaticResource CustomColor}" />
+
+            <Style TargetType="controls:HamburgerMenu">
+                <Setter Property="AccentColor" Value="{StaticResource APP_COLOR}" />
+                <Setter Property="HamburgerBackground" Value="Green" />
+                <Setter Property="VisualStateNarrowMinWidth" Value="{StaticResource NarrowMinWidth}" />
+                <Setter Property="VisualStateNormalMinWidth" Value="{StaticResource NormalMinWidth}" />
+                <Setter Property="VisualStateWideMinWidth" Value="{StaticResource WideMinWidth}" />
+            </Style>
+
+            <Style TargetType="controls:PageHeader">
+                <Setter Property="BackButtonVisibility" Value="Collapsed" />
+                <Setter Property="Background" Value="{ThemeResource CustomColorBrush}" />
+                <Setter Property="Foreground" Value="{ThemeResource ContrastColorBrush}" />
+                <Setter Property="VisualStateNarrowMinWidth" Value="{StaticResource NarrowMinWidth}" />
+                <Setter Property="VisualStateNormalMinWidth" Value="{StaticResource NormalMinWidth}" />
+            </Style>
+
+            <Style TargetType="controls:Resizer">
+                <Setter Property="GrabberBrush" Value="{StaticResource CustomColorBrush}" />
+                <Setter Property="GrabberVisibility" Value="Visible" />
+            </Style>
+
+            <!-- Activity Tracker specific Styles -->
+            <SolidColorBrush x:Key="MAIN_FONTCOLOR" Color="White" />
+            <SolidColorBrush x:Key="BACKGROUND_COLOR" Color="#FF253D5D" />
+            <SolidColorBrush x:Key="LINE_COLOR" Color="#FFDDDDDD" />
+
+            <!-- For List (Contacts and Activities) -->
+            <Style x:Key="TextBlock_ListHeader" TargetType="TextBlock">
+                <Setter Property="Margin" Value="12,4" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="Foreground" Value="{StaticResource MAIN_FONTCOLOR}" />
+            </Style>                
+            <Style x:Key="Grid_ActivityList" TargetType="Grid">
+                <Setter Property="Background" Value="{StaticResource LIGHT_GREY}" />
+            </Style>
+            <Style x:Key="Image_List" TargetType="Image">
+                <Setter Property="Height" Value="32" />
+                <Setter Property="Width" Value="32" />
+                <Setter Property="Stretch" Value="Uniform" />
+            </Style>
+            <Style x:Key="TextBlock_List_FirstLine" TargetType="TextBlock">
+                <Setter Property="Foreground" Value="{StaticResource MAIN_FONTCOLOR}" />
+                <Setter Property="FontSize" Value="24" />
+            </Style>
+            <Style x:Key="TextBlock_List_SecondLine" TargetType="TextBlock">
+                <Setter Property="Foreground" Value="{StaticResource LIGHT_BLUE}" />
+                <Setter Property="FontSize" Value="18" />
+            </Style>
+            <Style x:Key="TextBlock_ActivityList_FirstLine" TargetType="TextBlock">
+                <Setter Property="Foreground" Value="{StaticResource DARK_PURPLE}" />
+                <Setter Property="FontSize" Value="22" />
+            </Style>
+            <Style x:Key="TextBlock_ActivityList_SecondLine" TargetType="TextBlock">
+                <Setter Property="Foreground" Value="{StaticResource MEDIUM_GREY}" />
+                <Setter Property="FontSize" Value="14" />
+            </Style>
+            <Style x:Key="Line_List" TargetType="Line">
+                <Setter Property="VerticalAlignment" Value="Bottom" />
+                <Setter Property="Stretch" Value="Fill" />
+                <Setter Property="Stroke" Value="{StaticResource LINE_COLOR}" />
+                <Setter Property="StrokeThickness" Value="0.5" />
+                <Setter Property="X1" Value="0" />
+                <Setter Property="X2" Value="1" />
+            </Style>            
+
+            <!-- For Contact Card -->
+            <Style x:Key="TextBlock_Card_FirstLine" TargetType="TextBlock">
+                <Setter Property="Foreground" Value="{StaticResource MAIN_FONTCOLOR}" />
+                <Setter Property="FontSize" Value="24" />
+            </Style>
+            <Style x:Key="TextBlock_Card_SecondLine" TargetType="TextBlock">
+                <Setter Property="Foreground" Value="{StaticResource LIGHT_BLUE}" />
+                <Setter Property="FontSize" Value="18" />
+            </Style>
+            <Style x:Key="StackPanel_Card_Item" TargetType="StackPanel">
+                <Setter Property="Margin" Value="8,0,0,4" />
+                <Setter Property="Orientation" Value="Horizontal" />
+            </Style>
+            <Style x:Key="Image_Card_Item" TargetType="Image">
+                <Setter Property="Width" Value="40" />
+            </Style>
+            <Style x:Key="TextBlock_Card_Item" TargetType="TextBlock">
+                <Setter Property="Margin" Value="12,0" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="Foreground" Value="{StaticResource MAIN_FONTCOLOR}" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+            </Style>
+
+            <!-- For Checkin Page -->
+            <Style x:Key="TextBlock_CheckinItemTitle" TargetType="TextBlock">
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="Margin" Value="0,8,0,0" />
+            </Style>            
+            
+        </ResourceDictionary>
+
+        <!--  RequestedTheme=Light  -->
+        <ResourceDictionary x:Key="Light">
+
+            <SolidColorBrush x:Key="ExtendedSplashBackground" Color="{StaticResource ContrastColor}" />
+            <SolidColorBrush x:Key="ExtendedSplashForeground" Color="{StaticResource CustomColor}" />
+
+            <SolidColorBrush x:Key="ModalBackground" Opacity=".5" Color="{StaticResource CustomColor}" />
+
+            <Style TargetType="controls:HamburgerMenu">
+                <Setter Property="AccentColor" Value="{StaticResource CustomColor}" />                
+                <Setter Property="VisualStateNarrowMinWidth" Value="{StaticResource NarrowMinWidth}" />
+                <Setter Property="VisualStateNormalMinWidth" Value="{StaticResource NormalMinWidth}" />
+                <Setter Property="VisualStateWideMinWidth" Value="{StaticResource WideMinWidth}" />
+            </Style>
+
+            <Style TargetType="controls:PageHeader">
+                <Setter Property="BackButtonVisibility" Value="Collapsed" />
+                <Setter Property="Background" Value="{ThemeResource CustomColorBrush}" />
+                <Setter Property="Foreground" Value="{ThemeResource ContrastColorBrush}" />
+                <Setter Property="VisualStateNarrowMinWidth" Value="{StaticResource NarrowMinWidth}" />
+                <Setter Property="VisualStateNormalMinWidth" Value="{StaticResource NormalMinWidth}" />
+            </Style>
+
+            <Style TargetType="controls:Resizer">
+                <Setter Property="GrabberBrush" Value="{StaticResource CustomColorBrush}" />
+                <Setter Property="GrabberVisibility" Value="Visible" />
+            </Style>
+
+            <!-- Activity Tracker specific Styles -->
+            <SolidColorBrush x:Key="MAIN_FONTCOLOR" Color="Black" />
+            <SolidColorBrush x:Key="BACKGROUND_COLOR" Color="#FFF5F5F5" />
+            <SolidColorBrush x:Key="LINE_COLOR" Color="#FF999999" />
+
+            <!-- For List (Contacts and Activities) -->
+            <Style x:Key="TextBlock_ListHeader" TargetType="TextBlock">
+                <Setter Property="Margin" Value="12,4" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="Foreground" Value="{StaticResource MAIN_FONTCOLOR}" />
+            </Style>
+            <Style x:Key="Grid_ActivityList" TargetType="Grid">
+                <Setter Property="Background" Value="{StaticResource LIGHT_GREY}" />
+            </Style>
+            <Style x:Key="Image_List" TargetType="Image">
+                <Setter Property="Height" Value="32" />
+                <Setter Property="Width" Value="32" />
+                <Setter Property="Stretch" Value="Uniform" />
+            </Style>
+            <Style x:Key="TextBlock_List_FirstLine" TargetType="TextBlock">
+                <Setter Property="Foreground" Value="{StaticResource MAIN_FONTCOLOR}" />
+                <Setter Property="FontSize" Value="24" />
+            </Style>
+            <Style x:Key="TextBlock_List_SecondLine" TargetType="TextBlock">
+                <Setter Property="Foreground" Value="{StaticResource LIGHT_BLUE}" />
+                <Setter Property="FontSize" Value="18" />
+            </Style>
+            <Style x:Key="TextBlock_ActivityList_FirstLine" TargetType="TextBlock">
+                <Setter Property="Foreground" Value="{StaticResource DARK_PURPLE}" />
+                <Setter Property="FontSize" Value="22" />
+            </Style>
+            <Style x:Key="TextBlock_ActivityList_SecondLine" TargetType="TextBlock">
+                <Setter Property="Foreground" Value="{StaticResource MEDIUM_GREY}" />
+                <Setter Property="FontSize" Value="14" />
+            </Style>
+            <Style x:Key="Line_List" TargetType="Line">
+                <Setter Property="VerticalAlignment" Value="Bottom" />
+                <Setter Property="Stretch" Value="Fill" />
+                <Setter Property="Stroke" Value="{StaticResource LINE_COLOR}" />
+                <Setter Property="StrokeThickness" Value="0.5" />
+                <Setter Property="X1" Value="0" />
+                <Setter Property="X2" Value="1" />
+            </Style>
+
+            <!-- For Contact Card -->
+            <Style x:Key="TextBlock_Card_FirstLine" TargetType="TextBlock">
+                <Setter Property="Foreground" Value="{StaticResource MAIN_FONTCOLOR}" />
+                <Setter Property="FontSize" Value="24" />
+            </Style>
+            <Style x:Key="TextBlock_Card_SecondLine" TargetType="TextBlock">
+                <Setter Property="Foreground" Value="{StaticResource LIGHT_BLUE}" />
+                <Setter Property="FontSize" Value="18" />
+            </Style>
+            <Style x:Key="StackPanel_Card_Item" TargetType="StackPanel">
+                <Setter Property="Margin" Value="8,0,0,4" />
+                <Setter Property="Orientation" Value="Horizontal" />
+            </Style>
+            <Style x:Key="Image_Card_Item" TargetType="Image">
+                <Setter Property="Width" Value="40" />
+            </Style>
+            <Style x:Key="TextBlock_Card_Item" TargetType="TextBlock">
+                <Setter Property="Margin" Value="12,0" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="Foreground" Value="{StaticResource MAIN_FONTCOLOR}" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+            </Style>
+
+            <!-- For Checkin Page -->
+            <Style x:Key="TextBlock_CheckinItemTitle" TargetType="TextBlock">
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="Margin" Value="0,8,0,0" />
+            </Style>
+
+            <!-- ProgressRing -->
+            <Style TargetType="ProgressRing">
+                <Setter Property="Foreground" Value="{StaticResource MAIN_FONTCOLOR}" />
+                <Setter Property="Height" Value="80" />
+                <Setter Property="Width" Value="80" />
+            </Style>
+        
+        </ResourceDictionary>
+
+        <!--  RequestedTheme=HighContrast  -->
+        <ResourceDictionary x:Key="HighContrast">
+            
+            <SolidColorBrush x:Key="ExtendedSplashBackground" Color="Black" />
+            <SolidColorBrush x:Key="ExtendedSplashForeground" Color="White" />
+
+            <SolidColorBrush x:Key="ModalBackground" Color="Black" />
+
+            <Style TargetType="controls:HamburgerMenu">
+                <Setter Property="HamburgerBackground" Value="Black" />
+                <Setter Property="HamburgerForeground" Value="White" />
+                <Setter Property="NavAreaBackground" Value="Black" />
+                <Setter Property="NavButtonBackground" Value="White" />
+                <Setter Property="NavButtonCheckedBackground" Value="White" />
+                <Setter Property="NavButtonForeground" Value="Black" />
+                <Setter Property="NavButtonHoverBackground" Value="White" />
+                <Setter Property="SecondarySeparator" Value="White" />
+                <Setter Property="VisualStateNarrowMinWidth" Value="{StaticResource NarrowMinWidth}" />
+                <Setter Property="VisualStateNormalMinWidth" Value="{StaticResource NormalMinWidth}" />
+                <Setter Property="VisualStateWideMinWidth" Value="{StaticResource WideMinWidth}" />
+            </Style>
+
+            <Style TargetType="controls:PageHeader">
+                <Setter Property="Background" Value="Black" />
+                <Setter Property="Foreground" Value="White" />
+                <Setter Property="VisualStateNarrowMinWidth" Value="{StaticResource NarrowMinWidth}" />
+                <Setter Property="VisualStateNormalMinWidth" Value="{StaticResource NormalMinWidth}" />
+            </Style>
+
+            <Style TargetType="controls:Resizer">
+                <Setter Property="GrabberBrush" Value="White" />
+                <Setter Property="GrabberVisibility" Value="Visible" />
+            </Style>
+
+        </ResourceDictionary>
+    </ResourceDictionary.ThemeDictionaries>
+</ResourceDictionary>
+

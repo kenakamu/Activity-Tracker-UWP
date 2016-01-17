@@ -1,0 +1,124 @@
+﻿<ViewModels:MainPageViewModel xmlns:ViewModels="using:ActivityTrackerUWP.ViewModels" xmlns:DataModel="using:ActivityTrackerUWP.Models" xmlns:System="using:System" IsLoading="True" SearchCriteria="Class aenean vestibulum maecenas curabitur" SearchTitle="Nam adipiscing curae cras">
+	<ViewModels:MainPageViewModel.ContactResults>
+		<DataModel:Contact AccountWithTitle="Nunc donec mauris parturient" Address1="Fusce aliquam integer" Email1="Vestibulum amet ante" FullName="Phasellus duis praesent accumsan consequat" JobTitle="Quisque vivamus" ParentCompany="Sed dis est convallis etiam" Telephone1="Bibendum vestibulum">
+			<DataModel:Contact.EntityImage>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+			</DataModel:Contact.EntityImage>
+			<DataModel:Contact.Id>
+				<System:Guid/>
+			</DataModel:Contact.Id>
+		</DataModel:Contact>
+		<DataModel:Contact AccountWithTitle="Leo mus lorem" Address1="Morbi nec dignissim eget" Email1="Elit enim" FullName="Aliquam dictumst hac arcu" JobTitle="Non elementum facilisis" ParentCompany="Eleifend nullam" Telephone1="Diam aliquet">
+			<DataModel:Contact.EntityImage>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+			</DataModel:Contact.EntityImage>
+			<DataModel:Contact.Id>
+				<System:Guid/>
+			</DataModel:Contact.Id>
+		</DataModel:Contact>
+		<DataModel:Contact AccountWithTitle="Fermentum conubia aptent" Address1="Nibh sit auctor" Email1="Fringilla habitasse congue" FullName="Nulla blandit commodo erat proin" JobTitle="Habitant cubilia inceptos fames hendrerit" ParentCompany="Augue dolor per facilisi" Telephone1="Faucibus sed sem eros">
+			<DataModel:Contact.EntityImage>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+			</DataModel:Contact.EntityImage>
+			<DataModel:Contact.Id>
+				<System:Guid/>
+			</DataModel:Contact.Id>
+		</DataModel:Contact>
+		<DataModel:Contact AccountWithTitle="Himenaeos vel" Address1="Adipiscing parturient nisi dapibus" Email1="Imperdiet lacus dis" FullName="Cursus felis dictum" JobTitle="Nisl vestibulum egestas" ParentCompany="Ipsum interdum" Telephone1="Justo nam sed">
+			<DataModel:Contact.EntityImage>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+			</DataModel:Contact.EntityImage>
+			<DataModel:Contact.Id>
+				<System:Guid/>
+			</DataModel:Contact.Id>
+		</DataModel:Contact>
+		<DataModel:Contact AccountWithTitle="Nascetur est hac vestibulum" Address1="Leo odio vestibulum libero vestibulum" Email1="Lorem mus penatibus nec orci" FullName="Vestibulum lobortis adipiscing parturient nunc" JobTitle="Pede quam magna quis" ParentCompany="Malesuada vestibulum lectus" Telephone1="Adipiscing parturient">
+			<DataModel:Contact.EntityImage>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+			</DataModel:Contact.EntityImage>
+			<DataModel:Contact.Id>
+				<System:Guid/>
+			</DataModel:Contact.Id>
+		</DataModel:Contact>
+		<DataModel:Contact AccountWithTitle="Ligula porttitor tincidunt" Address1="Feugiat luctus" Email1="Metus gravida" FullName="Adipiscing non euismod" JobTitle="Morbi urna cras iaculis" ParentCompany="Parturient pharetra" Telephone1="Massa litora">
+			<DataModel:Contact.EntityImage>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+			</DataModel:Contact.EntityImage>
+			<DataModel:Contact.Id>
+				<System:Guid/>
+			</DataModel:Contact.Id>
+		</DataModel:Contact>
+		<DataModel:Contact AccountWithTitle="Magnis placerat nunc natoque" Address1="Sed vulputate ante" Email1="Mauris posuere" FullName="Vestibulum duis lacinia laoreet" JobTitle="Arcu sem netus vestibulum" ParentCompany="Mattis amet pulvinar" Telephone1="Tristique ultricies per neque venenatis">
+			<DataModel:Contact.EntityImage>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+			</DataModel:Contact.EntityImage>
+			<DataModel:Contact.Id>
+				<System:Guid/>
+			</DataModel:Contact.Id>
+		</DataModel:Contact>
+		<DataModel:Contact AccountWithTitle="Montes nostra phasellus" Address1="Pretium vestibulum nulla elit" Email1="Porta sociosqu sit platea" FullName="Mollis curabitur potenti adipiscing" JobTitle="Suscipit rhoncus vel" ParentCompany="Parturient sagittis diam eget" Telephone1="Senectus ornare">
+			<DataModel:Contact.EntityImage>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+			</DataModel:Contact.EntityImage>
+			<DataModel:Contact.Id>
+				<System:Guid/>
+			</DataModel:Contact.Id>
+		</DataModel:Contact>
+		<DataModel:Contact AccountWithTitle="Nam consequat vestibulum convallis" Address1="Facilisis vestibulum" Email1="Dis fermentum erat est" FullName="Sodales viverra aliquam" JobTitle="Ultrices purus risus eros" ParentCompany="Sed enim torquent adipiscing" Telephone1="Dignissim integer quisque parturient elementum">
+			<DataModel:Contact.EntityImage>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+			</DataModel:Contact.EntityImage>
+			<DataModel:Contact.Id>
+				<System:Guid/>
+			</DataModel:Contact.Id>
+		</DataModel:Contact>
+		<DataModel:Contact AccountWithTitle="Rutrum habitasse class vivamus" Address1="Semper hac aliquam" Email1="Vehicula volutpat nisi maecenas aliquet" FullName="Primis fringilla velit vitae" JobTitle="Curae parturient nisl" ParentCompany="Sapien vestibulum" Telephone1="Adipiscing hendrerit nibh himenaeos">
+			<DataModel:Contact.EntityImage>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+			</DataModel:Contact.EntityImage>
+			<DataModel:Contact.Id>
+				<System:Guid/>
+			</DataModel:Contact.Id>
+		</DataModel:Contact>
+	</ViewModels:MainPageViewModel.ContactResults>
+</ViewModels:MainPageViewModel>

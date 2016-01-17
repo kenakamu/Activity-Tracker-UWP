@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+  <VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.1">
+
+  <CommandSet xml:lang="en-us" Name="ActivityTrackerCommands">
+    <CommandPrefix>Activity Tracker</CommandPrefix>
+    <Example>Find Jim</Example>
+
+    <Command Name="Find">
+      <Example>Find Jim</Example>
+      <ListenFor>{find} {searchCriteria}</ListenFor>
+      <Feedback>Finding {searchCriteria}</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+
+    <Command Name="Checkin">
+      <Example>Check in (with) Jim</Example>
+      <ListenFor>{checkin} {searchCriteria}</ListenFor>
+      <Feedback>Finding {searchCriteria}</Feedback>
+      <Navigate Target="MainPage.xaml"/>
+    </Command>
+    
+    <PhraseList Label="find">
+      <Item>Find</Item>
+      <Item>Search</Item>
+    </PhraseList>   
+   
+    <PhraseList Label="checkin">
+      <Item>Check in</Item>
+      <Item>Check in with</Item>
+    </PhraseList>
+
+    <PhraseTopic Label="searchCriteria" Scenario="dictation">
+      <Subject>Contact Name</Subject>
+    </PhraseTopic>
+    
+  </CommandSet>
+  <!-- Other CommandSets for other languages -->
+
+</VoiceCommands>

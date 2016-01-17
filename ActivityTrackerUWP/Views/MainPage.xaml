@@ -1,0 +1,128 @@
+<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Behaviors="using:Template10.Behaviors"
+    xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:controls="using:Template10.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:ActivityTrackerUWP.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:ActivityTrackerUWP.ViewModels" 
+    xmlns:models="using:ActivityTrackerUWP.Models"
+    x:Class="ActivityTrackerUWP.Views.MainPage"
+    mc:Ignorable="d">
+
+    <Page.DataContext>
+        <vm:MainPageViewModel />
+    </Page.DataContext>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" d:DataContext="{d:DesignData /SampleData/MainPageViewModelSampleData.xaml}">
+
+        <!--  #region default visual states  -->
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="AdaptiveVisualStateGroup">
+                <VisualState x:Name="VisualStateNarrow">
+                    <VisualState.Setters>
+                        <Setter Target="contentGrid.(Grid.Padding)">
+                            <Setter.Value>
+                                <Thickness>0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="txtSearchBox.(UIElement.Visibility)" Value="Collapsed"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="{StaticResource NarrowMinWidth}" />
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="VisualStateNormal">
+                    <VisualState.Setters>
+                       
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="{StaticResource NormalMinWidth}" />
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="VisualStateWide">
+                    <VisualState.Setters>
+                        
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="{StaticResource WideMinWidth}" />
+                    </VisualState.StateTriggers>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <!--  #endregion  -->
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!--  page header  -->
+        <controls:PageHeader x:Name="pageHeader" BackButtonVisibility="Collapsed" Content="Contacts" Frame="{x:Bind Frame}">
+            <Interactivity:Interaction.Behaviors>
+                <Behaviors:EllipsisBehavior Visibility="Auto" />
+            </Interactivity:Interaction.Behaviors>
+            <controls:PageHeader.SecondaryCommands>
+                <AppBarButton Click="{x:Bind ViewModel.GotoAbout}" Label="About" />
+            </controls:PageHeader.SecondaryCommands>
+        </controls:PageHeader>
+        
+        <!--  page content  -->
+        <Grid x:Name="contentGrid" Background="{StaticResource BACKGROUND_COLOR}" Grid.Row="1" Padding="12">
+            <!-- Contact List -->
+            <Grid  >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- SearchBox -->
+                <Grid Padding="12,8,12,0">
+                    <StackPanel>
+                        <TextBlock x:Name="txtSearchBox" Text="Contact Search Box" Foreground="{StaticResource MAIN_FONTCOLOR}"/>
+                        <AutoSuggestBox Text="{x:Bind ViewModel.SearchCriteria, Mode=TwoWay}" QuerySubmitted="{x:Bind ViewModel.SearchContacts}" QueryIcon="Find" TextChanged="{x:Bind ViewModel.SearchTextChanged}"/>
+                    </StackPanel>
+                </Grid>
+
+                <!-- Contact List Header -->
+                <TextBlock Grid.Row="1" Text="{x:Bind ViewModel.SearchTitle, Mode=OneWay}" Style="{StaticResource TextBlock_ListHeader}"/>
+
+                <!-- Contact List -->
+                <Grid Grid.Row="2">
+                    <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                        <ListView
+							ItemsSource="{x:Bind ViewModel.ContactResults, Mode=OneWay}"
+							IsItemClickEnabled="True"
+							ItemClick="{x:Bind ViewModel.ContectClicked, Mode=OneWay}">
+                            <ListView.ItemTemplate>
+                                <DataTemplate x:DataType="models:Contact">
+                                    <Grid>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="../Assets/icon-contact.png" Style="{StaticResource Image_List}"/>
+                                            <StackPanel Padding="16,0,12,4">
+                                                <TextBlock Text="{x:Bind FullName}" Style="{StaticResource TextBlock_List_FirstLine}"/>
+                                                <TextBlock Style="{StaticResource TextBlock_List_SecondLine}">
+                                                    <Run Text="{x:Bind ParentCompany}" />
+                                                    <Run Text="-" />
+                                                    <Run Text="{x:Bind JobTitle}" />
+                                                </TextBlock>
+                                            </StackPanel>
+                                        </StackPanel>
+                                        <Line Style="{StaticResource Line_List}"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </ScrollViewer>
+                </Grid>
+
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>
+

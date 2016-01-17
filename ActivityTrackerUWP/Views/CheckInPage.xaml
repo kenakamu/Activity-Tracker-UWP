@@ -1,0 +1,98 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Behaviors="using:Template10.Behaviors"
+    xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:controls="using:Template10.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:ActivityTrackerUWP.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:ActivityTrackerUWP.ViewModels" 
+    xmlns:CustomControls="using:ActivityTrackerUWP.CustomControls"
+    x:Class="ActivityTrackerUWP.Views.CheckInPage"
+    mc:Ignorable="d">
+
+    <Page.DataContext>
+        <vm:CheckInPageViewModel />
+    </Page.DataContext>
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton Icon="Save" Label="Save" Click="{x:Bind ViewModel.SaveTask}"/>
+            <AppBarButton Icon="Delete" Label="Delete" Click="{x:Bind ViewModel.DeleteTask}"/>
+            <AppBarButton Icon="Microphone" Label="Voice" Click="{x:Bind ViewModel.GetVoice}" />
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" d:DataContext="{d:DesignData /SampleData/ContactDetailPageViewModelSampleData.xaml}">
+
+        <!--  #region default visual states  -->
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="AdaptiveVisualStateGroup">
+                <VisualState x:Name="VisualStateNarrow">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="{StaticResource NarrowMinWidth}" />
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="VisualStateNormal">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="{StaticResource NormalMinWidth}" />
+
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="VisualStateWide">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="{StaticResource WideMinWidth}" />
+                    </VisualState.StateTriggers>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <!--  #endregion  -->
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!--  page header  -->
+        <controls:PageHeader x:Name="pageHeader" BackButtonVisibility="Collapsed" Content="CheckIn Page" Frame="{x:Bind Frame}">
+            <Interactivity:Interaction.Behaviors>
+                <Behaviors:EllipsisBehavior Visibility="Auto" />
+            </Interactivity:Interaction.Behaviors>
+            <controls:PageHeader.SecondaryCommands>
+                <AppBarButton Click="{x:Bind ViewModel.GotoAbout}" Label="About" />
+            </controls:PageHeader.SecondaryCommands>
+        </controls:PageHeader>
+
+        <!--  page content  -->
+        <Grid Grid.Row="1" Padding="12,12" Background="{StaticResource BACKGROUND_COLOR}" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Contact Card -->
+            <Grid>
+                <StackPanel Orientation="Horizontal">
+                    <!-- Picture, Name, JobTitle, and ParentCompany name -->
+                    <CustomControls:EntityImageControl ImageBytes="{x:Bind ViewModel.CurrentContact.EntityImage, Mode=OneWay}" />
+                    <StackPanel Margin="12,4,0,4">
+                        <TextBlock Text="{x:Bind ViewModel.CurrentContact.FullName, Mode=OneWay}" Style="{StaticResource TextBlock_Card_FirstLine}" />
+                        <TextBlock Style="{StaticResource TextBlock_List_SecondLine}">
+                            <Run Text="{x:Bind ViewModel.CurrentContact.ParentCompany, Mode=OneWay}" />
+                            <Run Text="-" />
+                            <Run Text="{x:Bind ViewModel.CurrentContact.JobTitle, Mode=OneWay}" />
+                        </TextBlock>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+
+            <!-- Task Detail -->
+            <Grid Grid.Row="1">
+                <CustomControls:CheckInItem DataContext="{x:Bind ViewModel.CurrentActivity, Mode=OneWay}"/>               
+            </Grid>            
+        </Grid>
+        
+    </Grid>
+</Page>

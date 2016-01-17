@@ -1,0 +1,116 @@
+﻿<ViewModels:ContactDetailPageViewModel xmlns:ViewModels="using:ActivityTrackerUWP.ViewModels" xmlns:DataModel="using:ActivityTrackerUWP.Models" xmlns:System="using:System" IsLoading="True" PinLabel="Vestibulum tempor vivamus">
+	<ViewModels:ContactDetailPageViewModel.CurrentActivity>
+        <DataModel:Activity ActualEndDate="Donec sodales praesent etiam tellus" ActivityIcon="../Assets/icon-activity-appt.png" ActivityTypeCode="Viverra accumsan" Notes="Integer quisque fermentum" Subject="Rhoncus arcu facilisis vestibulum">
+			<DataModel:Activity.ActualEnd>
+				<System:DateTimeOffset/>
+			</DataModel:Activity.ActualEnd>
+			<DataModel:Activity.Id>
+				<System:Guid/>
+			</DataModel:Activity.Id>
+		</DataModel:Activity>
+	</ViewModels:ContactDetailPageViewModel.CurrentActivity>
+	<ViewModels:ContactDetailPageViewModel.CompletedActivities>
+        <DataModel:Activity ActualEndDate="Aenean maecenas praesent adipiscing duis" ActivityIcon="../Assets/icon-activity-appt.png" ActivityTypeCode="Accumsan phasellus" Notes="Parturient curae dictumst quisque" Subject="Vestibulum curabitur cras class aliquam">
+			<DataModel:Activity.ActualEnd>
+				<System:DateTimeOffset/>
+			</DataModel:Activity.ActualEnd>
+			<DataModel:Activity.Id>
+				<System:Guid/>
+			</DataModel:Activity.Id>
+		</DataModel:Activity>
+        <DataModel:Activity ActualEndDate="Vivamus eleifend mauris donec" ActivityIcon="../Assets/icon-activity-appt.png" ActivityTypeCode="Sed amet etiam ante" Notes="Nullam diam" Subject="Nam nunc convallis">
+			<DataModel:Activity.ActualEnd>
+				<System:DateTimeOffset/>
+			</DataModel:Activity.ActualEnd>
+			<DataModel:Activity.Id>
+				<System:Guid/>
+			</DataModel:Activity.Id>
+		</DataModel:Activity>
+        <DataModel:Activity ActualEndDate="Eget leo lorem auctor elementum" ActivityIcon="../Assets/icon-activity-appt.png" ActivityTypeCode="Aliquam vestibulum faucibus morbi" Notes="Interdum mus elit aliquet adipiscing" Subject="Aptent hac dignissim facilisi">
+			<DataModel:Activity.ActualEnd>
+				<System:DateTimeOffset/>
+			</DataModel:Activity.ActualEnd>
+			<DataModel:Activity.Id>
+				<System:Guid/>
+			</DataModel:Activity.Id>
+		</DataModel:Activity>
+        <DataModel:Activity ActualEndDate="Parturient blandit fringilla" ActivityIcon="../Assets/icon-activity-appt.png" ActivityTypeCode="Commodo dictum lectus habitasse" Notes="Vestibulum himenaeos" Subject="Enim proin congue cursus fermentum">
+			<DataModel:Activity.ActualEnd>
+				<System:DateTimeOffset/>
+			</DataModel:Activity.ActualEnd>
+			<DataModel:Activity.Id>
+				<System:Guid/>
+			</DataModel:Activity.Id>
+		</DataModel:Activity>
+        <DataModel:Activity ActualEndDate="Conubia nascetur nec libero non" ActivityIcon="../Assets/icon-activity-appt.png" ActivityTypeCode="Ligula cubilia imperdiet litora" Notes="Dapibus malesuada luctus" Subject="Dolor fames">
+			<DataModel:Activity.ActualEnd>
+				<System:DateTimeOffset/>
+			</DataModel:Activity.ActualEnd>
+			<DataModel:Activity.Id>
+				<System:Guid/>
+			</DataModel:Activity.Id>
+		</DataModel:Activity>
+        <DataModel:Activity ActualEndDate="Lacus porttitor" ActivityIcon="../Assets/icon-activity-appt.png" ActivityTypeCode="Per sed" Notes="Adipiscing parturient" Subject="Ipsum penatibus justo">
+			<DataModel:Activity.ActualEnd>
+				<System:DateTimeOffset/>
+			</DataModel:Activity.ActualEnd>
+			<DataModel:Activity.Id>
+				<System:Guid/>
+			</DataModel:Activity.Id>
+		</DataModel:Activity>
+        <DataModel:Activity ActualEndDate="Nibh tincidunt" ActivityIcon="../Assets/icon-activity-appt.png" ActivityTypeCode="Nisi massa" Notes="Neque tristique" Subject="Mauris magna placerat">
+			<DataModel:Activity.ActualEnd>
+				<System:DateTimeOffset/>
+			</DataModel:Activity.ActualEnd>
+			<DataModel:Activity.Id>
+				<System:Guid/>
+			</DataModel:Activity.Id>
+		</DataModel:Activity>
+        <DataModel:Activity ActualEndDate="Nisl nunc" ActivityIcon="../Assets/icon-activity-appt.png" ActivityTypeCode="Montes vestibulum purus" Notes="Euismod adipiscing nostra ornare pulvinar" Subject="Netus nulla porta">
+			<DataModel:Activity.ActualEnd>
+				<System:DateTimeOffset/>
+			</DataModel:Activity.ActualEnd>
+			<DataModel:Activity.Id>
+				<System:Guid/>
+			</DataModel:Activity.Id>
+		</DataModel:Activity>
+        <DataModel:Activity ActualEndDate="Lacinia risus" ActivityIcon="../Assets/icon-activity-appt.png" ActivityTypeCode="Sit platea" Notes="Pede velit quam" Subject="Feugiat orci gravida iaculis">
+			<DataModel:Activity.ActualEnd>
+				<System:DateTimeOffset/>
+			</DataModel:Activity.ActualEnd>
+			<DataModel:Activity.Id>
+				<System:Guid/>
+			</DataModel:Activity.Id>
+		</DataModel:Activity>
+        <DataModel:Activity ActualEndDate="Ultricies sagittis quis urna" ActivityIcon="../Assets/icon-activity-appt.png" ActivityTypeCode="Vitae laoreet nam cras class" Notes="Curabitur phasellus sociosqu" Subject="Sapien semper vestibulum vel vestibulum">
+			<DataModel:Activity.ActualEnd>
+				<System:DateTimeOffset/>
+			</DataModel:Activity.ActualEnd>
+			<DataModel:Activity.Id>
+				<System:Guid/>
+			</DataModel:Activity.Id>
+		</DataModel:Activity>
+	</ViewModels:ContactDetailPageViewModel.CompletedActivities>
+	<ViewModels:ContactDetailPageViewModel.CurrentContact>
+		<DataModel:Contact AccountWithTitle="Duis dignissim curae ultrices" Address1="Adipiscing pretium maecenas sed" Email1="Taciti dis" FullName="Suscipit consequat convallis torquent sociis" JobTitle="Ante parturient" ParentCompany="Vehicula nunc volutpat" Telephone1="Amet posuere elementum potenti">
+			<DataModel:Contact.EntityImage>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+				<System:Byte/>
+			</DataModel:Contact.EntityImage>
+			<DataModel:Contact.Id>
+				<System:Guid/>
+			</DataModel:Contact.Id>
+		</DataModel:Contact>
+	</ViewModels:ContactDetailPageViewModel.CurrentContact>
+	<ViewModels:ContactDetailPageViewModel.Id>
+		<System:Guid/>
+	</ViewModels:ContactDetailPageViewModel.Id>
+</ViewModels:ContactDetailPageViewModel>
